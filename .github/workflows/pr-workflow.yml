@@ -1,2 +1,25 @@
 #TODO:
 # -Run tests and linting
+name: Push changes workflow
+on:
+  pull_request:
+    branches:
+      - "feat/*"
+
+jobs:
+  run_tests:
+    name: "Run tests"
+    runs-on: ubuntu-latest
+    steps:
+      - id: "test1"
+        run: |
+          yarn test
+
+  run_contentful_push:
+    name: "Push contentful changes "
+    runs-on: ubuntu-latest
+    needs: [run_tests]
+    steps:
+      - id: "test2"
+        run: |
+          echo " running contentful push"

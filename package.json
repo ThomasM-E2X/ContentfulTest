@@ -6,7 +6,7 @@
   "scripts": {
     "contentful:push": "tsc && node ./dist/index.js",
     "contentful:build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,8 @@
     "typescript": "^4.6.3"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
     "ts-node": "^10.7.0"
   }
 }
