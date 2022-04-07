@@ -1,0 +1,9 @@
+#env
+.env
+#yarn
+yarn.lock
+#build and dist
+build
+dist
+#node modules
+node_modules/
