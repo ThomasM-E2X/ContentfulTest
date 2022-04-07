@@ -9,7 +9,7 @@ jobs:
     name: "Run tests"
     runs-on: ubuntu-latest
     steps:
-      - id: ""
+      - id: "test1"
         run: |
           echo " running tests"
 
@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [run_tests]
     steps:
-      - id: ""
+      - id: "test2"
         run: |
           echo " running contentful push"
