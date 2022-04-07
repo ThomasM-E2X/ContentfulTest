@@ -11,7 +11,7 @@ jobs:
     steps:
       - id: "test1"
         run: |
-          echo " running tests"
+          yarn test
 
   run_contentful_push:
     name: "Push contentful changes "
