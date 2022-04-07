@@ -1,0 +1,23 @@
+name: Push changes workflow
+on:
+  push:
+    branches:
+      - "feat/*"
+
+jobs:
+  run_tests:
+    name: "Run tests"
+    runs-on: ubuntu-latest
+    steps:
+      - id: ""
+      - run: |
+          echo " running tests"
+
+  run_contentful_push:
+    name: "Push contentful changes "
+    runs-on: ubuntu-latest
+    needs: [run_tests]
+    steps:
+      - id: ""
+      - run: |
+          echo " running contentful push"
