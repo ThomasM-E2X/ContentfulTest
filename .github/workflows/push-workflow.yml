@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: ""
-      - run: |
+        run: |
           echo " running tests"
 
   run_contentful_push:
@@ -19,5 +19,5 @@ jobs:
     needs: [run_tests]
     steps:
       - id: ""
-      - run: |
+        run: |
           echo " running contentful push"
