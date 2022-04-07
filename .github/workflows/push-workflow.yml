@@ -35,6 +35,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [run_tests]
     steps:
-      - id: "test2"
+      - uses: actions/checkout@v2
+      - name: use node ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: install dependencies
+        working-directory: ${{env.working-dir}}
         run: |
-          echo " running contentful push"
+          yarn
+
+      - name: "contentful push"
+        run: |
+          yarn contentful:push
