@@ -7,9 +7,6 @@ name: Create contentful env workflow
 on:
   create:
     branches: [master]
-    paths:
-      - "packages/pokemon/**"
-      - ".github/workflows/pokemon-pr.yml"
   push:
     branches: [master]
 
