@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "contentful:push": "tsc && node ./dist/index.js",
+    "contentful:build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
