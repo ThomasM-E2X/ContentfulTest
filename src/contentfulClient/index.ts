@@ -58,17 +58,38 @@ class ContentfulClient {
   }
 
   removeEnv(env?: string) {
+    const params = {
+      environmentId: env
+        ? env
+        : process.env.CONTENTFUL_SPACE_ID?.toLowerCase().includes("master")
+        ? ""
+        : process.env.CONTENTFUL_SPACE_ID,
+      spaceId: process.env.CONTENTFUL_SPACE_ID as string,
+    };
     this.contentfulClient.environment
-      .delete({
-        environmentId:
-          env ??
-          process.env.CONTENTFUL_SPACE_ID?.toLowerCase().includes("master")
-            ? ""
-            : process.env.CONTENTFUL_SPACE_ID,
-        spaceId: process.env.CONTENTFUL_SPACE_ID as string,
-      })
+      .delete(params)
       .then(() => console.log(`${env} deleted`))
-      .catch(() => console.log(`$failed to delete ${env}`));
+      .catch((err) => console.log(`$failed to delete ${env} \n ${err}`));
+  }
+
+  createEnv() {
+    const params = {
+      environmentId: process.env.CONTENTFUL_ENVIONMENT_ID as string,
+      spaceId: process.env.CONTENTFUL_SPACE_ID as string,
+      sourceEnvironmentId: "master",
+    };
+    this.contentfulClient.environment
+      .createWithId(params, {
+        name: process.env.CONTENTFUL_ENVIONMENT_ID,
+      })
+      .then(() =>
+        console.log(`${process.env.CONTENTFUL_ENVIONMENT_ID} Created`)
+      )
+      .catch((err) =>
+        console.log(
+          `$failed to delete ${process.env.CONTENTFUL_ENVIONMENT_ID} \n ${err}`
+        )
+      );
   }
 }
 
