@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: Deploy Contentful
         id: migration
-        uses: contentful-userland/contentful-migration-automation@v1
+        uses: contentful-userland/contentful-action@v1
         env:
           SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
