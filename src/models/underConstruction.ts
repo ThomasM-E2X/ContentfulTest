@@ -13,7 +13,7 @@ export const UnderConstruction = {
       name: "Text",
       required: true,
       localized: true,
-      type: "Text",
+      type: "Number",
     },
   ],
 };

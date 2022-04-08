@@ -2,26 +2,22 @@
 
 #TODO: get it to work
 
-name: Create contentful env workflow
-
-on:
-  create:
-    branches: [master]
-    paths:
-      - "packages/pokemon/**"
-      - ".github/workflows/pokemon-pr.yml"
-  push:
-    branches: [master]
-
-jobs:
-  deploy_contentful:
-    name: "deploys a new contentful env"
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy Contentful
-        id: migration
-        uses: contentful-userland/contentful-action@v1
-        env:
-          SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+#name: Create contentful env workflow
+#
+#on:
+#  create:
+#    branches: [master]
+#
+#jobs:
+#  deploy_contentful:
+#    name: "deploys a new contentful env"
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Deploy Contentful
+#        id: migration
+#        uses: contentful-userland/contentful-action@v1
+#        env:
+#          SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+#          MANAGEMENT_API_KEY: ${{ secrets.CONTENTFUL_MANAGEMENT_API_KEY }}
+#
