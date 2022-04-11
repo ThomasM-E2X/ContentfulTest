@@ -15,12 +15,5 @@ export const Page = {
       localized: true,
       type: "Text",
     },
-    {
-      id: "body",
-      name: "Body",
-      required: true,
-      localized: true,
-      type: "Text",
-    },
   ],
 };
